@@ -1,34 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [expression, setExpression] = useState('')
+  const [result, setResult] = useState(null)
+
+  const buttonArr = [ "AC", "clr", "%", "/", 7, 8, 9, "*", 4, 5, 6, "-", 1, 2, 3, "+", "null", 0, ".", "=" ]
+
+  
+
+  const clearScr = () => {
+    setExpression('')
+    setResult(null)
+  }
+
+  const backSpace = () => {
+    setExpression(prev =>  prev.slice(0, -1))
+  }
+
+  const handleInput = (value) => {
+    if (value !== "null") {
+      setExpression(prev => prev + value)
+    }
+  }
+
+
+  const calculate = () => {
+    let operation = ''
+    for(let i = 0; i< expression.length; i++) {
+      const op = expression[i]
+      if(["+", "-", "*", "/", "%"].includes(op)){
+        operation = op
+      } else {
+        setResult("Invalid expression")
+      }
+    }
+    const n1 = +expression.split(`${operation}`)[0]
+    const n2 = +expression.split(`${operation}`)[1]
+
+    if (operation === "+") setResult(n1 + n2)
+    if (operation === "-") setResult(n1 - n2)
+    if (operation === "*") setResult(n1 * n2)
+    if (operation === "/") {
+      if(n2 !== 0){
+        setResult((n1 / n2).toFixed(2))
+      }else {
+        setResult("Error")
+      }
+    }
+    if (operation === "%") setResult((n1 * (n2 / 100)).toFixed(2))
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='container'>
+      <div className='screen'>
+        {expression}
+        {result && <div>={result}</div>}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className='button-container'>
+        {
+          buttonArr.map(elem => (
+          <button
+          key={elem}
+          onClick={elem === "AC"? clearScr : elem === "clr" ? backSpace : elem === "=" ? calculate : () => {handleInput(elem.toString())} }
+          className='keys'>{elem}</button>))
+        }
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
