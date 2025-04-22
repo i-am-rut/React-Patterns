@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: aliceblue;
+  text-align: left;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.user-action-container {
+  width: 60rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+}
+
+select {
+  width: 30%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  letter-spacing: 1px;
+} 
+
+.user-cta-container {
+  padding: 2rem;
+  border: 3px solid whitesmoke;
+  border-radius: 1rem;
+}
+
+.style {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: #242424;
+  text-align: left;
+  margin-top: -3.9rem;
+  width: 14.5rem;
+  margin-bottom: 2rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input {
+  margin-top: 8px;
+  width: 20px;
+  height: 20px;
+}
