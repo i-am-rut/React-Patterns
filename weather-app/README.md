@@ -1,6 +1,6 @@
 # 🌦️ Weather App
 
-A simple React weather app that uses the **OpenWeatherMap API** and the **browser's geolocation API** to show real-time weather information for your current location or any city you search.
+A simple React weather app that uses the **OpenWeatherMap API** and the **browser's geolocation API** to show real-time weather information for your current location or any city you search. The app also uses useState and useEffect hooks extensively in order to maintain workflow of sequential actions.
 
 ---
 
