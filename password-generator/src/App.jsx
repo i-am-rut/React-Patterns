@@ -1,9 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Interative from './Interactive'
 import './App.css'
 
 function App() {
   const [config, setConfig] = useState(null)
+
+  useEffect(() => {
+    if(!config) return
+
+
+  }, [config])
+
+  console.log(config)
 
   return (
     <div>

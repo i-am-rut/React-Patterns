@@ -2,7 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .title {
@@ -18,7 +18,7 @@
   width: 60rem;
 }
 
-form {
+.config-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,3 +65,25 @@ input {
   width: 20px;
   height: 20px;
 }
+
+.config-error {
+  margin-top: 2rem;
+  width: 35%;
+  color: crimson;
+  font-weight: bold;
+  padding: 0 1rem;
+  border: 2px solid crimson;
+  border-radius: 0.5rem;
+}
+
+.generate-button {
+  margin-top: 3rem;
+  background-color: lightgray;
+  color: #242424;
+  margin-bottom: 1rem;
+}
+
+.generate-button:hover {
+  border: 2px solid orangered;
+} 
+
