@@ -1,0 +1,92 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.city {
+  margin-top: 3rem;
+  padding: 0;
+  font-size: 2rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.city-input {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: none;
+  width: 28rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: c;
+}
+
+.error {
+  color: crimson;
+  font-weight: bold;
+  border: 2px solid crimson;
+  border-radius: 0.5rem;
+  background-color: black;
+  padding: 1rem;
+}
+
+.special {
+  font-size: 1.3rem;
+  color: azure;
+}
+
+.normal {
+  font-size: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+p {
+  font-size: 1rem;
+  color: rgb(175, 175, 175);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.message {
+  padding: 1rem;
+  font-weight: bold;
+  color: crimson;
+  border: 1px solid crimson;
+  background-color: whitesmoke;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+}
+
+progress {
+  margin-top: 10rem;
+  height: 1rem;
+}
+
+.title {
+  color: aquamarine;
+  text-align: left;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1rem;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUAJBMgFQt5twsjLE9au0cejS8Iv3BculODw&s");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
