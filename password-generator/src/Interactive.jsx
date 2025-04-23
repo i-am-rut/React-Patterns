@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Interative = ({setConfig}) => {
+const Interactive = ({setConfig}) => {
     const [format, setFormat] = useState({
         amount: "",
         lower: false,
@@ -32,11 +32,10 @@ const Interative = ({setConfig}) => {
             return
         } else {
             setConfig(format)
+            setError(null)
         }
 
     }
-
-    console.log(error)
     
 
     return (
@@ -87,8 +86,8 @@ const Interative = ({setConfig}) => {
                 {error && 
                     <div className="config-error">
                         {
-                            error.map(err => (
-                                err && <p>{err}</p>
+                            error.map((err, index) => (
+                                err && <p key={index} >{err}</p>
                             ))
                         }
                     </div>
@@ -102,4 +101,4 @@ const Interative = ({setConfig}) => {
     )
 }
 
-export default Interative
+export default Interactive

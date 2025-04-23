@@ -2,7 +2,26 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  /* text-align: center; */
+}
+
+.page-container {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  right: 43%;
+  left: 35%;
+  bottom: 0;
+  padding: 1rem 2rem;
+  background-color: whitesmoke;
+  color: #242424;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
 }
 
 .title {
@@ -84,6 +103,73 @@ input {
 }
 
 .generate-button:hover {
-  border: 2px solid orangered;
+  border: none;
 } 
 
+.display-container {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid aquamarine ;
+  border-radius: 1rem;
+  background-color: rgb(0, 73, 77);
+}
+
+.background-color {
+  padding: 0 1rem;
+  background-color: #242424;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.regenerate-button {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.regen-icon {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 4px;
+  transform: rotate(180deg);
+}
+
+
+.password-display-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.display-pass-container {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #1a1a1a;
+  width: 8rem;
+  border-radius: 0.5rem;
+}
+
+.password-text {
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.copy-clipboard-button {
+  padding: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 1.075rem;
+}
+
+.copy-clipboard-button:hover {
+  border: none;
+}

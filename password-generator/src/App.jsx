@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
-import Interative from './Interactive'
+import Interactive from './Interactive'
+import Display from './Display'
 import './App.css'
 
 function App() {
   const [config, setConfig] = useState(null)
   const [passwords, setPasswords] = useState(null)
+  const [show, setShow] = useState(false)
+
 
   const lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
@@ -14,6 +17,8 @@ function App() {
 
   const char = ['!','@','#','$','%','^','&','*','(',')','-','_','=','+','[',']','{','}',';',':','\'','"','<','>','.',',','?','/','|','`','~']
   const lookup = {lower, upper, number, char}
+
+    
   
 
   useEffect(() => {
@@ -22,6 +27,18 @@ function App() {
     combinePasswords(config)
     
   }, [config])
+
+  useEffect(() => {
+    if(!show) return
+
+    const timer = setTimeout(() => setShow(false), 2000)
+
+    return () => {
+        clearTimeout(timer)
+    }
+
+    }, [show]
+  )
 
 
   const getRandomElement = (arr) => {
@@ -63,15 +80,18 @@ function App() {
     setPasswords(generated)
   }
 
-  console.log(passwords)
 
   return (
-    <div>
+    <div className='page-container'>
       <div className='title'>Password generator</div>
       <div className='user-cta-container'>
         <p className='style'>Password configuration</p>
-        <Interative setConfig={setConfig} />
+        <Interactive setConfig={setConfig} />
       </div>
+      {passwords && 
+        <Display passwords={passwords} config={config} regenerate={combinePasswords} setShow={setShow} />
+      } 
+      <p className={`${!show ? "hidden" : "show"} modal`}>Copied to clipboard</p>
     </div>
   )
 }
